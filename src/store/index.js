@@ -8,6 +8,7 @@ export default new Vuex.Store({
     todoList: []
   },
   mutations: {
+    // Changes to state should be only in mutations
     addNewTodo (state, data) {
       state.todoList.push({
         text: data.newTodo,
@@ -37,6 +38,7 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    // Use of getter for getting data to components
     getTodoList: state => {
       return state.todoList;
     }
