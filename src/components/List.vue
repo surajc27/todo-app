@@ -1,5 +1,6 @@
 <template>
   <div class="list">
+    <!-- Use of Element-ui for UI designing components -->
     <el-container>
       <el-main>
         <el-row>
@@ -11,6 +12,7 @@
           </el-col>
           <el-col :span="12">
             <el-row v-for="todo in todoList" :key="todo.id" class="row-bg" justify="start">
+              <!-- Use of Filter for text transformation -->
               <el-col :span="20" class="text" :class="{done : todo.done}">{{todo.text | upperCase}}</el-col>
               <el-col :span="2">
                 <el-button type="success" icon="el-icon-check" circle @click="checkTodo(todo.id)"></el-button>
@@ -38,6 +40,7 @@ export default {
   },
   computed: {
     ...mapGetters({
+      // Use of Getter for getting store data
       todoList: "getTodoList"
     })
   },
@@ -60,6 +63,7 @@ export default {
       this.$store.dispatch("checkTodo", { id: id });
     },
     deleteTodo(id) {
+      // Use of Element-ui message-box component for warning popup
       this.$confirm(
         "This will permanently delete the todo. Continue?",
         "Warning",
@@ -88,20 +92,6 @@ export default {
 </script>
 
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 .el-col {
   border-radius: 4px;
 }

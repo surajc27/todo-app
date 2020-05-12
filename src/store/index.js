@@ -2,7 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 Vue.use(Vuex);
-
+// In production code or large applications this code will be modularied.Actions,Mutations,Getter,State will be in separate files.
 export default new Vuex.Store({
   state: {
     todoList: []
@@ -36,7 +36,6 @@ export default new Vuex.Store({
       commit('deleteTodo', data);
     }
   },
-  modules: {},
   getters: {
     getTodoList: state => {
       return state.todoList;
