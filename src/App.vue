@@ -50,6 +50,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+// Use of scss
 .dark-mode-on {
   background: #1f2125 !important;
   input {
